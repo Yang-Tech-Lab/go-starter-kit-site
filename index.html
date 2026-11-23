@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Go Starter Kit — Production-Shaped REST API Starter</title>
+<meta name="description" content="A production-shaped Go REST API starter: pure standard-library HTTP, SQLite, JWT auth, two working example apps, tests, docs, and 12 SQL exercises. $49 one-time.">
+<style>
+  :root { --text:#1a1a1a; --muted:#555; --border:#e2e2e2; --accent:#0b6e4f; --bg:#fff; --soft:#f6f8f7; --code-bg:#f1f3f2; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--text); line-height:1.65; background:var(--bg); }
+  a { color:var(--accent); }
+  header { border-bottom:1px solid var(--border); }
+  .nav { max-width:860px; margin:0 auto; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; }
+  .nav .brand { font-weight:700; font-size:18px; color:var(--text); text-decoration:none; }
+  .nav nav a { margin-left:18px; color:var(--muted); text-decoration:none; font-size:15px; }
+  .nav nav a:hover { color:var(--text); }
+  main { max-width:860px; margin:0 auto; padding:0 20px 60px; }
+  section { padding:44px 0 8px; }
+  h1 { font-size:40px; line-height:1.2; margin:8px 0 16px; }
+  h2 { font-size:26px; margin:0 0 12px; }
+  h3 { font-size:18px; margin:24px 0 6px; }
+  p { margin:0 0 14px; }
+  .muted { color:var(--muted); }
+  .hero { padding:56px 0 20px; }
+  .hero p.lead { font-size:19px; color:var(--muted); max-width:640px; }
+  .cta-row { margin:24px 0 8px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:12px 22px; border-radius:8px; font-weight:600; text-decoration:none; font-size:16px; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-secondary { border:1px solid var(--border); color:var(--text); background:#fff; }
+  .note { font-size:14px; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  @media (max-width:640px){ .grid{grid-template-columns:1fr;} h1{font-size:32px;} }
+  .card { border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:#fff; }
+  .card h3 { margin:0 0 6px; font-size:17px; }
+  .card p { margin:0; font-size:15px; color:var(--muted); }
+  pre { background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; overflow-x:auto; font-size:13.5px; line-height:1.55; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  p code, li code, td code { background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:0.92em; }
+  table { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border); }
+  th { font-size:13px; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); }
+  ul.check { list-style:none; padding:0; margin:0 0 14px; }
+  ul.check li { padding:4px 0 4px 26px; position:relative; }
+  ul.check li::before { content:"✓"; position:absolute; left:4px; color:var(--accent); font-weight:700; }
+  .price-box { border:2px solid var(--accent); border-radius:12px; padding:28px; background:var(--soft); max-width:560px; }
+  .price { font-size:44px; font-weight:800; line-height:1; }
+  .price span { font-size:16px; font-weight:400; color:var(--muted); }
+  details { border:1px solid var(--border); border-radius:8px; padding:14px 18px; margin-bottom:10px; }
+  details summary { font-weight:600; cursor:pointer; }
+  details p { margin:10px 0 0; color:var(--muted); }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:640px){ .two-col{grid-template-columns:1fr;} }
+  footer { border-top:1px solid var(--border); margin-top:40px; }
+  .foot { max-width:860px; margin:0 auto; padding:24px 20px 40px; font-size:14px; color:var(--muted); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .foot a { color:var(--muted); text-decoration:none; margin-left:16px; }
+  .foot a:hover { color:var(--text); }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Go Starter Kit</a>
+    <nav>
+      <a href="#inside">What's inside</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Start your Go API from a working app, not an empty folder.</h1>
+    <p class="lead">A production-shaped REST API starter in pure Go: standard-library HTTP, SQLite, JWT auth, two working example apps, tests, docs, and SQL exercises. Clone it, rename the module, build your product.</p>
+    <div class="cta-row">
+      <!-- TODO: replace the href below with the Paddle checkout link after creating the product in Paddle. -->
+      <a class="btn btn-primary" href="#pricing">Buy the starter — $49</a>
+      <a class="btn btn-secondary" href="#inside">See what's inside</a>
+    </div>
+    <p class="note">One-time payment · Full source code · No framework to learn · Requires Go 1.25 or later</p>
+  </section>
+
+  <section>
+    <h2>The problem</h2>
+    <p>Every Go API starts the same way: routing, auth, a database, migrations, config, logging, error handling, tests. Done carefully, that is days of boilerplate before you write a single line of your product. Done hastily, it becomes the tech debt you pay for later.</p>
+    <p>This starter is that foundation, already built and already working — deliberately boring, four layers, one direction of dependencies, no framework magic. You read it in an afternoon and extend it without fighting abstractions.</p>
+  </section>
+
+  <section id="inside">
+    <h2>What's inside</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Pure standard-library HTTP</h3>
+        <p>Go 1.22+ <code>net/http</code> routing with method patterns. No web framework to learn, upgrade, or fight. Handlers are plain <code>http.HandlerFunc</code>s.</p>
+      </div>
+      <div class="card">
+        <h3>SQLite out of the box</h3>
+        <p><code>database/sql</code> + <code>modernc.org/sqlite</code> (pure Go, no cgo). Embedded SQL migrations run automatically on startup.</p>
+      </div>
+      <div class="card">
+        <h3>JWT auth, stdlib crypto</h3>
+        <p>HMAC-SHA256 tokens signed and verified with only the standard library, bcrypt password hashing, and auth middleware for protected routes.</p>
+      </div>
+      <div class="card">
+        <h3>Two working example apps</h3>
+        <p>A shortlink service (create, list, redirect, visit counts) and a notes CRUD — both owner-scoped, showing how the same pattern repeats for any resource.</p>
+      </div>
+      <div class="card">
+        <h3>Production habits included</h3>
+        <p>Env-based config with <code>.env</code> support, structured JSON logging (<code>log/slog</code>), graceful shutdown, <code>/healthz</code>, input validation, and one consistent JSON error envelope.</p>
+      </div>
+      <div class="card">
+        <h3>Tests included</h3>
+        <p>Test suites for auth, handlers, and the store. Run them with <code>make test</code>. Ownership failures return 404, so callers can't probe other users' records.</p>
+      </div>
+      <div class="card">
+        <h3>Four guides, not just code</h3>
+        <p>Architecture, auth design, database (including how to swap to Postgres), and deployment — VPS, Docker, and free-tier notes.</p>
+      </div>
+      <div class="card">
+        <h3>12 SQL exercises</h3>
+        <p>Progressive exercises on the starter's own schema — SELECT, JOINs, aggregates, migrations — with solutions included.</p>
+      </div>
+    </div>
+
+    <h3>API at a glance</h3>
+    <table>
+      <tr><th>Method</th><th>Path</th><th>Auth</th><th>What it does</th></tr>
+      <tr><td>GET</td><td><code>/healthz</code></td><td>—</td><td>Health check</td></tr>
+      <tr><td>POST</td><td><code>/api/v1/auth/register</code></td><td>—</td><td>Register; returns user + JWT</td></tr>
+      <tr><td>POST</td><td><code>/api/v1/auth/login</code></td><td>—</td><td>Log in; returns user + JWT</td></tr>
+      <tr><td>GET</td><td><code>/api/v1/me</code></td><td>Bearer</td><td>Current user profile</td></tr>
+      <tr><td>POST</td><td><code>/api/v1/links</code></td><td>Bearer</td><td>Shorten a URL</td></tr>
+      <tr><td>GET</td><td><code>/api/v1/links</code></td><td>Bearer</td><td>List your shortlinks</td></tr>
+      <tr><td>GET</td><td><code>/{code}</code></td><td>—</td><td>Redirect, counting the visit</td></tr>
+      <tr><td>POST / GET / PUT / DELETE</td><td><code>/api/v1/notes…</code></td><td>Bearer</td><td>Full notes CRUD</td></tr>
+    </table>
+
+    <h3>Running in 5 minutes</h3>
+    <pre><code>cp .env.example .env
+make test
+make run
+# Server listens on http://localhost:8080
+
+curl localhost:8080/healthz
+curl -X POST localhost:8080/api/v1/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"ada@example.com","password":"password123"}'</code></pre>
+    <p class="muted">The README walks through the full flow — register, log in, shorten a link, watch visits grow — and shows how to rename the module and add your own resource by copying the notes pattern.</p>
+  </section>
+
+  <section>
+    <h2>Who it's for — and who it's not for</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Good fit</h3>
+        <p>Indie hackers and developers starting a Go side project or MVP who want auth, a database, and sane defaults on day one — and Go learners who want a small, readable codebase to study, with tests and SQL practice included.</p>
+      </div>
+      <div class="card">
+        <h3>Not a fit</h3>
+        <p>Teams that need a specific framework (Gin, Echo, Fiber), Postgres or MySQL from the start, or a hosted backend. This starter is stdlib + SQLite by design; the database guide explains the swap, but the swap is your work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <div class="price-box">
+      <div class="price">$49 <span>one-time</span></div>
+      <p style="margin-top:12px;">The complete starter kit, yours to keep:</p>
+      <ul class="check">
+        <li>Full Go source code — API, auth, store, migrations, tests</li>
+        <li>Two working example apps: shortlinks + notes</li>
+        <li>Four guides: architecture, auth, database, deployment</li>
+        <li>12 SQL exercises with solutions</li>
+        <li>Dockerfile and Makefile included</li>
+        <li>Commercial license — use it in unlimited personal and commercial projects</li>
+      </ul>
+      <!-- TODO: replace the href below with the Paddle checkout link after creating the product in Paddle. -->
+      <a class="btn btn-primary" href="#pricing">Buy now — $49</a>
+      <p class="note" style="margin-top:12px;">Secure checkout by Paddle (merchant of record). You may not resell or redistribute the starter itself — see the <a href="terms.html">terms</a> and the license in the pack.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>What do I need to run it?</summary>
+      <p>Go 1.25 or later — that's it. SQLite is embedded (pure Go driver, no cgo), so there is no database to install. Everything is configured through environment variables; a <code>.env.example</code> is included.</p>
+    </details>
+
+    <details>
+      <summary>Which framework does it use?</summary>
+      <p>None. It uses Go's standard library <code>net/http</code> with Go 1.22+ routing. If you outgrow the standard mux, the handlers are plain <code>http.HandlerFunc</code>s and move easily to a framework later.</p>
+    </details>
+
+    <details>
+      <summary>What does the license allow?</summary>
+      <p>One purchase lets you use the starter in an unlimited number of personal and commercial projects, including client work, and modify the code for your own projects. You may not resell, redistribute, sublicense, or publish the starter itself — the full license is in the pack (<code>LICENSE.txt</code>) and summarized in the <a href="terms.html">terms</a>.</p>
+    </details>
+
+    <details>
+      <summary>How do refunds work?</summary>
+      <p>Payments are handled by Paddle, the merchant of record. If the starter doesn't run as documented on a supported Go version, email support and we'll make it right — refunds are processed through Paddle.</p>
+    </details>
+
+    <details>
+      <summary>Can I use Postgres instead of SQLite?</summary>
+      <p>Yes, with your own work: handlers depend on small repository interfaces (<code>UserStore</code>, <code>LinkStore</code>, <code>NoteStore</code>), so swapping databases means writing a new implementation, not rewriting handlers. The database guide explains the approach.</p>
+    </details>
+
+    <details>
+      <summary>Do I get updates?</summary>
+      <p>You buy the current version of the starter. If an improved version ships later, upgrade terms will be announced on this page — this purchase does not promise future versions.</p>
+    </details>
+
+    <details>
+      <summary>How do I get support?</summary>
+      <p>Email yanglao290@gmail.com. Include your Go version and the command or error you're seeing, and we'll help you get running.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© 2026 YANG JIACHENG · Go Starter Kit</span>
+    <span>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
+      <a href="mailto:yanglao290@gmail.com">Support</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>
