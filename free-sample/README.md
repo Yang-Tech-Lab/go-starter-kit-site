@@ -31,7 +31,7 @@ This sample is one small piece of the Go Starter Kit — a production-shaped Go 
 - These 12 SQL exercises with solutions
 - Dockerfile and Makefile included
 
-$49 one-time: https://yang-tech-lab.github.io/go-starter-kit-site/
+$19 one-time: https://yang-tech-lab.github.io/go-starter-kit-site/
 
 ## License
 
